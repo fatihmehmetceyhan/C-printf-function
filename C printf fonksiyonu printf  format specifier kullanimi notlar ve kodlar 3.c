@@ -5,7 +5,7 @@
      yukleme tarihi 19/05/2024
 
     youtube video linki : 
-    https://youtu.be/iDuuggSk2ak?si=4HdwP-qgPwjmZATR
+    https://youtu.be/iDuuggSk2ak?si=9PvBvvE7hwZZCNPe
     
     printf syntax/soz dizimi:
     int printf(const char *format, ...);
