@@ -5,7 +5,7 @@
      yukleme tarihi 19/05/2024
 
   kaynaklar:
-
+//[C11 Standart::ISO/IEC 9899:201x::p.312-313-314-315::7.21.6.1 the fprintf function]
   d, i:
       int argümanı, [−]dddd tarzında işaretli ondalık sayıya dönüştürülür. 
       Kesinlik, görünmesi gereken minimum basamak sayısını belirtir; dönüştürülen değer daha az basamakla temsil edilebiliyorsa, başa sıfır eklenerek genişletilir. 
@@ -82,7 +82,135 @@ c
       Bir % karakteri yazılır. Hiçbir argüman dönüştürülmez. Tam dönüşüm belirtimi %% olmalıdır.
 
 
+//[The C Programming Language,2nd Edition::p.244::B1.2 Formatted Output]
+    d, i: int; işaretle belirtilmiş ondalık gösterim.
 
+    o: int; önde sıfır olmayan ondalık olmayan gösterim.
+
+    x, X: int; önde Ox veya ox olmadan ondalık olmayan onaltılık gösterim, Ox için abcdef veya OX için ABCDEF kullanılır.
+
+    u: int; işaretsiz ondalık gösterim.
+
+    c: int; tek karakter, işaretsiz char'a dönüştürüldükten sonra.
+
+    s: char *; dizeden karakterler, bir '\0' karakterine ulaşılıncaya veya hassasiyet tarafından belirtilen karakter sayısı yazdırılıncaya kadar yazdırılır.
+
+    f, F: double; [-]mmm.ddd biçiminde ondalık gösterim, d'nin sayısı kesinlik tarafından belirtilir. Varsayılan hassasiyet 6'dır; 0 hassasiyeti ondalık noktayı bastırır.
+
+    e, E: double; [-]m.dddddde±xx veya [-]m.ddddddE±xx biçiminde ondalık gösterim, d'nin sayısı kesinlik tarafından belirtilir. Varsayılan hassasiyet 6'dır; 0 hassasiyeti ondalık noktayı bastırır.
+
+    g, G: double; üs -4'ten küçükse veya kesinliğe eşit veya büyükse "e veya "E kullanılır; aksi takdirde "f kullanılır. Sondaki sıfırlar ve sondaki ondalık nokta yazdırılmaz.
+
+    p: void *; bir işaretçi olarak yazdır (uygulamaya bağlı temsil).
+
+    n: int *; bu çağrı ile şimdiye kadar yazılan karakter sayısı belirtilen argümana yazılır. Hiçbir argüman dönüştürülmez.
+
+    %: Hiçbir argüman dönüştürülmez; "%%" yazdırılır.
+
+
+
+    
+//[libc::p.291-292::12.12.3 Table of Output Conversions]
+    ‘%d’, ‘%i’
+        Bir tamsayıyı işaretle belirtilmiş ondalık sayı olarak yazdırır. Detaylar için Bölüm 12.12.4'e bakınız. Çıkış için ‘%d’ ve ‘%i’ eş anlamlıdır, ancak giriş için scanf ile kullanıldığında farklıdır.
+
+    ‘%o’
+        Bir tamsayıyı işaretsiz sekizli sayı olarak yazdırır. Detaylar için Bölüm 12.12.4'e bakınız.
+
+    ‘%u’
+        Bir tamsayıyı işaretsiz ondalık sayı olarak yazdırır. Detaylar için Bölüm 12.12.4'e bakınız.
+
+    ‘%x’, ‘%X’
+        Bir tamsayıyı işaretsiz onaltılık sayı olarak yazdırır. ‘%x’ küçük harf kullanır ve ‘%X’ büyük harf kullanır. Detaylar için Bölüm 12.12.4'e bakınız.
+
+    ‘%f’, ‘%F’
+        Bir kayan noktalı sayıyı normal (sabit noktalı) gösterimde yazdırır. ‘%f’ küçük harf kullanır ve ‘%F’ büyük harf kullanır. Detaylar için Bölüm 12.12.5'e bakınız.
+
+    ‘%e’, ‘%E’
+        Bir kayan noktalı sayıyı üs gösteriminde yazdırır. ‘%e’ küçük harf kullanır ve ‘%E’ büyük harf kullanır. Detaylar için Bölüm 12.12.5'e bakınız.
+
+    ‘%g’, ‘%G’
+        Bir kayan noktalı sayıyı normal veya üs gösteriminde uygun olan şekilde yazdırır. ‘%g’ küçük harf kullanır ve ‘%G’ büyük harf kullanır. Detaylar için Bölüm 12.12.5'e bakınız.
+
+    ‘%a’, ‘%A’
+        Bir kayan noktalı sayıyı onaltılık kısmi gösterimde ve taban 2'deki üssü ondalık hanelerle temsil ederek yazdırır. ‘%a’ küçük harf kullanır ve ‘%A’ büyük harf kullanır. Detaylar için Bölüm 12.12.5'e bakınız.
+
+    ‘%c’
+        Bir tek karakteri yazdırır. Detaylar için Bölüm 12.12.6'ya bakınız.
+
+    ‘%s’
+        Bir dizedeki karakterleri yazdırır. Detaylar için Bölüm 12.12.6'ya bakınız.
+
+    ‘%p’
+        Bir işaretçinin değerini yazdırır. Detaylar için Bölüm 12.12.6'ya bakınız.
+
+    ‘%n’
+        Şimdiye kadar yazdırılan karakter sayısını alır. Detaylar için Bölüm 12.12.6'ya bakınız. Bu dönüşüm belirtimi hiçbir çıktı üretmez.
+
+    ‘%%’
+        Bir literal ‘%’ karakterini yazdırır. Detaylar için Bölüm 12.12.6'ya bakınız.
+
+
+
+    %
+        Harfi harfine yazıyor . Tam dönüştürme belirtimi şu şekilde olmalıdır: . %%%
+
+    c	
+        Tek bir karakter yazar. Bağımsız değişken ilk olarak imzasız karakter. l değiştiricisi kullanılırsa, bağımsız değişken önce bir karakter dizesine dönüştürülür ve %ls ile a wchar_t[2] tartışma.
+
+    s
+        Bir karakter dizesi yazar Bağımsız değişken, bir karakter dizisinin ilk öğesinin işaretçisi olmalıdır. Duyarlık, yazılacak maksimum bayt sayısını belirtir. 
+        Kesinlik belirtilmezse, ilk boş sonlandırıcıya kadar olan her baytı yazar ve ilk null sonlandırıcı dahil değildir. 
+        l belirticisi kullanılırsa, bağımsız değişkenin bir dizinin ilk öğesinin işaretçisi olması gerekir. 
+        wchar_t, sıfır başlatılmış dönüştürme durumuna sahip wcrtomb'a yapılan bir çağrıyla char dizisine dönüştürülür.
+
+    d,i
+        İşaretli bir tamsayıyı ondalık gösterime dönüştürür [-]dddd. Duyarlık, görüntülenecek minimum basamak sayısını belirtir. Varsayılan duyarlık 1.
+        Hem dönüştürülen değer hem de duyarlık 0 Dönüştürme hiçbir karakterle sonuçlanmaz.
+
+    o	
+        İşaretsiz bir tamsayıyı sekizli gösterime dönüştürür oooo. Duyarlık, görüntülenecek minimum basamak sayısını belirtir. Varsayılan duyarlık 1. 
+        Hem dönüştürülen değer hem de duyarlık 0 Dönüştürme hiçbir karakterle sonuçlanmaz. Alternatif uygulamada, gerekirse bir sıfır yazmak için hassasiyet artırılır. 
+        Bu durumda, hem dönüştürülen değer hem de duyarlık 0tek 0 yazılmıştır.
+
+    x,X	
+        İşaretsiz bir tamsayıyı onaltılık gösterime dönüştürür hhhh. Dönüşüm için harfler kullanılır.Dönüşüm için harfler kullanılır.Duyarlık, görüntülenecek minimum basamak sayısını belirtir. 
+        Varsayılan duyarlık xabcdef XABCDEF 1. Hem dönüştürülen değer hem de duyarlık 0 Dönüştürme hiçbir karakterle sonuçlanmaz. 
+        Alternatif uygulamada veya dönüştürülen değer sıfırdan farklıysa sonuçlara önek olarak eklenir. 0x0X
+
+    u	
+        İşaretsiz bir tamsayıyı ondalık gösterim dddd'ye dönüştürür. Duyarlık, görüntülenecek minimum basamak sayısını belirtir. Varsayılan duyarlık 1. 
+        Hem dönüştürülen değer hem de duyarlık 0 Dönüştürme hiçbir karakterle sonuçlanmaz.
+
+    f,F	
+        Kayan noktalı sayıyı [-]ddd.ddd stilinde ondalık gösterime dönüştürür. Kesinlik, ondalık nokta karakterinden sonra görünecek basamak sayısını belirtir. 
+        Varsayılan duyarlık 6. Alternatif uygulamada, ondalık nokta karakteri, takip eden basamak olmasa bile yazılır. Sonsuzluk ve sayı olmayan dönüştürme stili için notlara bakın.
+
+    e,E	
+        Kayan noktalı sayıyı ondalık üs gösterimine dönüştürür.Dönüştürme stili için [-]d.ddd±dd kullanılır. Dönüştürme stili için [-]d.ddd±dd kullanılır.
+        Üs en az iki basamak içerir, yalnızca gerektiğinde daha fazla basamak kullanılır. Değer eeEE 0, üs aynı zamanda 0. Kesinlik, ondalık nokta karakterinden sonra görünecek basamak sayısını belirtir. 
+        Varsayılan duyarlık 6. Alternatif uygulamada, ondalık nokta karakteri, takip eden basamak olmasa bile yazılır. Sonsuzluk ve sayı olmayan dönüştürme stili için notlara bakın.
+
+    a,A (C99)
+        Kayan noktalı sayıyı onaltılık üs gösterimine dönüştürür. Dönüştürme stili için [-]h.hhh±d kullanılır. Dönüştürme stili için [-]h.hhh±d kullanılır.
+        İlk onaltılık basamak, bağımsız değişkenin normalleştirilmiş bir kayan nokta değeri olup olmadığı değildir. Değer a0xpA0XP00, üs aynı zamanda 0. 
+        Kesinlik, onaltılık nokta karakterinden sonra görünecek basamak sayısını tam olarak belirtir. Varsayılan duyarlık, değerin tam gösterimi için yeterlidir. 
+        Alternatif uygulamada, ondalık nokta karakteri, onu takip eden hiçbir rakam olmasa bile yazılır. Sonsuzluk ve sayı olmayan dönüştürme stili için notlara bakın
+
+    g,G	
+        Kayan noktalı sayıyı, değere ve duyarlığa bağlı olarak ondalık veya ondalık üs gösterimine dönüştürür.Stil veya stil ile dönüştürme stili için gerçekleştirilecektir.
+        Stil veya stil ile dönüştürme stili için gerçekleştirilecektir. Sıfır değilse kesinliği eşitleyelim, gefGEFP6 Kesinlik belirtilmemişse veya 1 Hassasiyet ise 0. 
+        Daha sonra, stil içeren bir dönüşümün üssü şu şekilde olacaktır: EX
+        P > X ≥ −4 ise, dönüşüm stil veya hassasiyetle P − 1 − X olur. fF
+        aksi takdirde, dönüşüm stil veya hassasiyetle P − 1 ile yapılır. eE
+        Alternatif gösterim istenmedikçe, sondaki sıfırlar kaldırılır, ayrıca kesirli kısım bırakılmamışsa ondalık nokta karakteri kaldırılır. Sonsuzluk ve sayı olmayan dönüştürme stili için notlara bakın.
+
+    n	
+        Bu çağrıyla işleve o ana kadar yazılan karakter sayısını döndürür. Sonuç, bağımsız değişkenin işaret ettiği değere yazılır. 
+        Spesifikasyon herhangi bir bayrak, alan genişliği veya hassasiyet içermeyebilir.
+
+    p	
+        Bir işaretçiyi tanımlayan uygulama tanımlı bir karakter dizisi yazar.
 */
 #include<stdio.h>
 
