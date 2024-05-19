@@ -211,6 +211,57 @@ c
 
     p	
         Bir işaretçiyi tanımlayan uygulama tanımlı bir karakter dizisi yazar.
+
+
+//[cplusplus.com::reference:<cstdio>:printf]
+        Belirticisi     Çıktı	                                                            Örnek
+        d veya i        İşaretli ondalık tamsayı	                                        392
+        u               İşaretsiz ondalık tamsayı	                                        7235
+        o	            İşaretsiz sekizli	                                                610
+        x	            İşaretsiz onaltılık tamsayı	                                        7fa
+        X	            İşaretsiz onaltılık tamsayı (büyük harf)	                        7FA 
+        f	            Ondalık kayan nokta, küçük harf	                                    392.65
+        F	            Ondalık kayan nokta, büyük harf	                                    392.65
+        e	            Bilimsel gösterim (mantis/üs), küçük harf	                        3.9265E+2
+        E	            Bilimsel gösterim (peygamber devesi/üs), büyük harf                	3.9265E+2
+        g	            En kısa gösterimi kullanın: %e veya %f	                            392.65
+        G	            En kısa gösterimi kullanın: %E veya %F	                            392.65
+        a	            Onaltılık kayan nokta, küçük harf	                                -0xc.90fep-2
+        A	            Onaltılık kayan nokta, büyük harf	                                -0XC.90FEP-2
+        c	            Karakter	                                                        a
+        s	            Karakter dizesi                                                    	örnek
+        p	            İşaretçi adresi                                                    	b8000000
+        n	            Hiçbir şey yazdırılmadı.                                             
+                        Karşılık gelen bağımsız değişken,                                     
+                        işaretli bir int işaretçisi olmalıdır. 
+                        Şimdiye kadar yazılan karakter sayısı işaret edilen konumda saklanır.    
+                        
+        %	            Bir % ve ardından başka bir % karakteri, akışa tek bir % yazar.       %      
+
+
+//[FMC]
+    ||format specifier ||acıklama                               ||kullanımı    ||deger aralıgı                                            ||ornekler                                  ||
+    ||d                ||işaretli ondalık                       ||%d           ||-2147483648 den 2147483647                               ||2554                                      ||
+    ||i                ||işaretli tamsayı                       ||%i           ||-2147483648 den 2147483647                               ||95756                                     ||
+    ||c                ||tek karakter                           ||%c           ||-128 den 127 ASCII karakterleri veya normal karakter     ||95 veya 'A'                               ||
+    ||u                ||işaretsiz ondalık                      ||%u           ||0 dan 4294967295                                         ||65448                                     ||
+    ||u                ||işaretsiz tamsayı                      ||%u           ||0 dan 4294967295                                         ||16615                                     ||
+    ||o                ||işaretsiz sekizli                      ||%o           ||0 dan 4294967295                                         ||54648                                     ||
+    ||x                ||işaretsiz onaltılık                    ||%x           ||0 dan 4294967295                                         ||46951                                     ||
+    ||X                ||işaretsiz onaltılık                    ||%X           ||0 dan 4294967295                                         ||146516                                    ||
+    ||f                ||kayan noktalı sayı                     ||%f           ||[-+]d.dddddd                                             ||1.123456                                  ||
+    ||F                ||kayan noktalı sayı                     ||%F           ||[-+]ddd.dddddd                                           ||123.123456                                ||
+    ||e                ||bilimsel/üslü kayan noktalı sayı       ||%e           ||[-+]d.dddddde[-+]dd                                      ||1.123456e12                               ||
+    ||E                ||bilimsel/üslü kayan noktalı sayı       ||%E           ||[-+]ddd.ddddddE[-+]dd                                    ||123.123456E12                             ||
+    ||g                ||En kısa gösterimi kullanın: %e veya %f ||%g           ||P> X ≥−4, %f,%F degilse %e,%E                            ||1.12345                                   ||
+    ||G                ||En kısa gösterimi kullanın: %e veya %f ||%G           ||P> X ≥−4, %f,%F degilse %e,%E                            ||123.12345                                 ||
+    ||a                ||bilimsel/üslü Onaltılık kayan nokta    ||%a           ||[+-]0xh.hhhhhhhhhhhhhp[+-]d                              ||1.123456                                  ||
+    ||A                ||bilimsel/üslü Onaltılık kayan nokta    ||%A           ||[+-]0xH.HHHHHHHHHHHHHP[+-]d                              ||123.123456                                ||
+    ||s                ||Karakter dizesi                        ||%s           ||"karakter dizesi"                                        ||"karakter dizesi"                         ||
+    ||p                ||işaretçi adresi                        ||%p           ||işaretçi                                                 ||"işaretçi dizisi" veya işaretçi sayısı    ||
+    ||%                ||harfi harfine yazar                    ||%%           ||-                                                        ||%%                                        ||
+    ||n                || Hiçbir şey yazdırılmadı               ||%n           ||işaretli bir int                                         ||-                                         ||
+        
 */
 #include<stdio.h>
 
@@ -245,8 +296,8 @@ c
     ||F||kayan noktalı sayı||%F||[-+]ddd.dddddd||123.123456||
     ||e||bilimsel/üslü kayan noktalı sayı ||%e||[-+]d.dddddde[-+]dd||1.123456e12||
     ||E||bilimsel/üslü kayan noktalı sayı||%E||[-+]ddd.ddddddE[-+]dd||123.123456E12||
-    ||g||En kısa gösterimi kullanın: %e veya %f||%g||P> X ≥−4, %f,%F degilse %e,%E||1.123456||
-    ||G||En kısa gösterimi kullanın: %e veya %f||%G||P> X ≥−4, %f,%F degilse %e,%E||123.123456||
+    ||g||En kısa gösterimi kullanın: %e veya %f||%g||P> X ≥−4, %f,%F degilse %e,%E||1.123455||
+    ||G||En kısa gösterimi kullanın: %e veya %f||%G||P> X ≥−4, %f,%F degilse %e,%E||123.12345||
     ||a||bilimsel/üslü Onaltılık kayan nokta||%a||[+-]0xh.hhhhhhhhhhhhhp[+-]d||1.123456||
     ||A||bilimsel/üslü Onaltılık kayan nokta||%A||[+-]0xH.HHHHHHHHHHHHHP[+-]d||123.123456||
     ||s||Karakter dizesi||%s||"karakter dizesi"||"karakter dizesi"||
