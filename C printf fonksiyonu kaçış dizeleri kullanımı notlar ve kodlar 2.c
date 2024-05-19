@@ -5,7 +5,7 @@
      yukleme tarihi 19/05/2024
      
     youtube video linki:
-    https://youtu.be/nT7cKt6_Bzg?si=Xlmq7CkeHC-t_Ozl
+    https://youtu.be/nT7cKt6_Bzg?si=uTtpARkdskV5NuXC
     
   kaynaklar:
 //[C11 Standart::ISO/IEC 9899:201x::p.57::6.4 Lexical elements]:
