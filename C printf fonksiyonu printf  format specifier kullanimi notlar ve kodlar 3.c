@@ -264,46 +264,6 @@ c
         
 */
 #include<stdio.h>
-
-    printf fonksiyonu syntax/sözdizimi
-    int printf(const char *format,...);
-
-    printf fonskiyonu açıklaması
-    Biçimlendirilmiş verileri stdout a yazdırma
-    Biçime göre işaret edilen C dizesini standart çıktıya (stdout) yazar.
-    Biçim, biçim belirticileri (% ile başlayan alt diziler) içeriyorsa, biçimden sonra gelen ek bağımsız değişkenler biçimlendirilir ve
-    ilgili belirticilerinin yerini alarak sonuçta elde edilen dizeye eklenir.
-
-    printf fonksiyonu kullanımı
-    printf("const char");
-
-    printf fonksiyonu kullanımı
-    printf("const char %format specifier1 %format specifier2     %format specifierN",arg1,arg2,...,argN);
-
-    Bir biçim belirticisi bu prototipi izler:
-    %[flags][width][.precision][length]specifier
-
-    ||format specifier||acıklama||kullanımı||deger aralıgı||ornekler||
-    ||d||işaretli ondalık||%d||-2147483648 den 2147483647 ||2554||
-    ||i||işaretli tamsayı||%i||-2147483648 den 2147483647||95756||
-    ||c||tek karakter||%c||-128 den 127 ASCII karakterleri veya normal karakter  ||95 veya 'A'||
-    ||u||işaretsiz ondalık||%u||0 dan 4294967295||65448||
-    ||u||işaretsiz tamsayı||%u||0 dan 4294967295||16615||
-    ||o||işaretsiz sekizli||%o||0 dan 4294967295||54648||
-    ||x||işaretsiz onaltılık||%x||0 dan 4294967295||46951||
-    ||X||işaretsiz onaltılık||%X||0 dan 4294967295||146516||
-    ||f||kayan noktalı sayı||%f||[-+]d.dddddd||1.123456||
-    ||F||kayan noktalı sayı||%F||[-+]ddd.dddddd||123.123456||
-    ||e||bilimsel/üslü kayan noktalı sayı ||%e||[-+]d.dddddde[-+]dd||1.123456e12||
-    ||E||bilimsel/üslü kayan noktalı sayı||%E||[-+]ddd.ddddddE[-+]dd||123.123456E12||
-    ||g||En kısa gösterimi kullanın: %e veya %f||%g||P> X ≥−4, %f,%F degilse %e,%E||1.123455||
-    ||G||En kısa gösterimi kullanın: %e veya %f||%G||P> X ≥−4, %f,%F degilse %e,%E||123.12345||
-    ||a||bilimsel/üslü Onaltılık kayan nokta||%a||[+-]0xh.hhhhhhhhhhhhhp[+-]d||1.123456||
-    ||A||bilimsel/üslü Onaltılık kayan nokta||%A||[+-]0xH.HHHHHHHHHHHHHP[+-]d||123.123456||
-    ||s||Karakter dizesi||%s||"karakter dizesi"||"karakter dizesi"||
-    ||p||işaretçi adresi||%p||işaretçi||"işaretçi dizisi" veya işaretçi sayısı||
-    ||%||harfi harfine yazar||%%||-||%%||
-    ||n|| Hiçbir şey yazdırılmadı||%n||işaretli bir int||-||
 int main()
 {
     printf("isaretli ondalik sayi [%%d]=[%d]\n",2147483647);
