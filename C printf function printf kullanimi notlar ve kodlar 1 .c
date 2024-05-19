@@ -57,6 +57,7 @@
     Bir çağrıda sağladığınız şablon dizesi argümanı, sadece ek argümanların sayısı hakkında değil, aynı zamanda bunların türleri ve yazdırma stilleri hakkında da bilgi sağlar. 
     Şablon dizesindeki sıradan karakterler olduğu gibi çıktı akışına yazılırken, şablonda ‘%’ karakteriyle başlayan dönüşüm belirtimleri, 
     sonraki argümanların biçimlendirilip çıktı akışına yazılmasına neden olur.
+    
 //[encpprefernce.com::input/output::formatted output]
     Verilen konumlardan verileri yükler, bunları karakter dizesi eşdeğerlerine dönüştürür ve sonuçları çeşitli havuzlara/akışlara yazar
     
