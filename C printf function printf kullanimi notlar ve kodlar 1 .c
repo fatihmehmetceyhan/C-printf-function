@@ -4,12 +4,12 @@
      olusturan: Fatih Mehmet CEYHAN: FMC 
      yukleme tarihi 19/05/2024
      
+    youtube videosu linki:
+    https://youtu.be/qoagmneYUMo?si=En_GMmD2i8_5-NKI
+    
     printf syntax/soz dizimi:
     int printf(const char *format, ...);
     printf("const char %format specifiers", arg1 , arg2 , . , . , );
-
-    youtube videosu linki:
-    https://youtu.be/qoagmneYUMo?si=En_GMmD2i8_5-NKI
     
   kaynaklar:
   
