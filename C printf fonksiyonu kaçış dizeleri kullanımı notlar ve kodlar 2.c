@@ -3,7 +3,10 @@
      olusturma tarihi: 19/05/2024 
      olusturan: Fatih Mehmet CEYHAN: FMC 
      yukleme tarihi 19/05/2024
-
+     
+    youtube video linki:
+    https://youtu.be/nT7cKt6_Bzg?si=Xlmq7CkeHC-t_Ozl
+    
   kaynaklar:
 //[C11 Standart::ISO/IEC 9899:201x::p.57::6.4 Lexical elements]:
   token:(belirteç)
