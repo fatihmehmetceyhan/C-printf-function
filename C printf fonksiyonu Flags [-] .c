@@ -4,6 +4,18 @@
      olusturan: Fatih Mehmet CEYHAN: FMC 
      yukleme tarihi 19/05/2024
      
+youtube linki
+https://youtu.be/oadd43f74Yo?si=cUnFLqqzPr04-71i
+
+    printf syntax/soz dizimi:
+    int printf(const char *format, ...);
+    printf("const char %format specifiers", arg1 , arg2 , . , . , );
+
+    Bir biçim belirticisi bu prototipi izler:
+    %[flags][width][.precision][length]specifier
+    
+    %[flags]specifier
+    
 kaynaklar:
 
 //[C11 Standart::ISO/IEC 9899:201x::p.310::7.21.6.1 the fprintf function]
