@@ -1,5 +1,9 @@
 /*
-
+    printf fonksiyonu printf format specifier kullanımı ve ornekleri:
+     olusturma tarihi: 19/05/2024 
+     olusturan: Fatih Mehmet CEYHAN: FMC 
+     yukleme tarihi 19/05/2024
+     
 kaynaklar:
 
 //[C11 Standart::ISO/IEC 9899:201x::p.310::7.21.6.1 the fprintf function]
