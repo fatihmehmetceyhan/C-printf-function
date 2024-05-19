@@ -3,7 +3,13 @@
      olusturma tarihi: 19/05/2024 
      olusturan: Fatih Mehmet CEYHAN: FMC 
      yukleme tarihi 19/05/2024
-
+     
+    printf syntax/soz dizimi:
+    int printf(const char *format, ...);
+    printf("const char %format specifiers", arg1 , arg2 , . , . , );
+    
+    youtube video linki : 
+    https://youtu.be/iDuuggSk2ak?si=UGqZC72Y8p6k63OU
   kaynaklar:
 //[C11 Standart::ISO/IEC 9899:201x::p.312-313-314-315::7.21.6.1 the fprintf function]
   d, i:
